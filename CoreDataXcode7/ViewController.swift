@@ -10,7 +10,7 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource {
     
     // set up the managedObjectContext to be reused for any Entity
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -100,6 +100,11 @@ class ViewController: UIViewController {
         address.text = ""
         phone.text = ""
         status.text = "Contact Saved"
+    }
+    
+    // MARK: TableViewData
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
     }
 }
 
