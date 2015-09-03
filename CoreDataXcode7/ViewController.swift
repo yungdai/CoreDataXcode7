@@ -12,12 +12,8 @@ import CoreData
 
 class ViewController: UIViewController {
     
-    
     // set up the managedObjectContext to be reused for any Entity
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
-    
-
-
     
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var address: UITextField!
@@ -54,7 +50,6 @@ class ViewController: UIViewController {
             status.text = "Could not save \(saveError), \(saveError.userInfo)"
         }
         
-        
         // reset the textFields when saved if there are no errors
         do {
             try resetFields()
@@ -79,10 +74,11 @@ class ViewController: UIViewController {
         
         // try querying the database for the name object
         do {
-            var objects = try managedObjectContext.executeFetchRequest(request)
+            // get all objects from the database based on the request
+            let objects = try managedObjectContext.executeFetchRequest(request)
             
+            // go through each result
             if let results: AnyObject =  objects {
-                
                 if results.count > 0 {
                     let match = results[0] as! NSManagedObject
                     name.text = match.valueForKey("name") as? String
@@ -93,6 +89,7 @@ class ViewController: UIViewController {
                     status.text = "No Match"
                 }
             }
+        // return errors if there are no contacts
         } catch let fetchError as NSError {
             status.text = "Could not get contact: \(pred), \(fetchError)"
         }
@@ -104,6 +101,5 @@ class ViewController: UIViewController {
         phone.text = ""
         status.text = "Contact Saved"
     }
-
 }
 
