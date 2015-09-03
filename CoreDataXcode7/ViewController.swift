@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var findButton: UIButton!
 
     // set up object to retrieve the requests to
-    var requestedObjects: AnyObject!
+    var requestedObjects: AnyObject = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,7 +83,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // get all objects from the database based on the request
             requestedObjects = try managedObjectContext.executeFetchRequest(request)
         
-            // go through each result
+            // go through each result but return the first result
             if let results: AnyObject =  requestedObjects {
                 if results.count > 0 {
                     let match = results[0] as! NSManagedObject
@@ -99,6 +99,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } catch let fetchError as NSError {
             status.text = "Could not get contact: \(pred), \(fetchError)"
         }
+        
+        tableView.reloadData()
     }
     
     func resetFields() throws {
@@ -115,21 +117,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        var rows = 0
-        if let tableItems = requestedObj
-        ects.count {
-            rows = tableItems
-        }
-        
-        return rows
+        return requestedObjects.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
-            cell.textLabel?.text = requestedObjects[indexPath.row].name as String?
         
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
+        cell.textLabel?.text = requestedObjects[indexPath.row].name as String!
         return cell
     }
-
 }
 
