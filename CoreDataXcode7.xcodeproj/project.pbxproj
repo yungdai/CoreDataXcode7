@@ -15,6 +15,9 @@
 		1A1070CB1B981B2E0011776C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1070C91B981B2E0011776C /* LaunchScreen.storyboard */; };
 		1A1070D61B981B2F0011776C /* CoreDataXcode7Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070D51B981B2F0011776C /* CoreDataXcode7Tests.swift */; };
 		1A1070E11B981B2F0011776C /* CoreDataXcode7UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070E01B981B2F0011776C /* CoreDataXcode7UITests.swift */; };
+		1A1070F41B9822280011776C /* Contacts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070F21B9822280011776C /* Contacts+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		1A1070F51B9822280011776C /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070F31B9822280011776C /* Contacts.swift */; settings = {ASSET_TAGS = (); }; };
+		1A1070F71B9826780011776C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A1070F61B9826780011776C /* CoreData.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +52,9 @@
 		1A1070DC1B981B2F0011776C /* CoreDataXcode7UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreDataXcode7UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1070E01B981B2F0011776C /* CoreDataXcode7UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataXcode7UITests.swift; sourceTree = "<group>"; };
 		1A1070E21B981B2F0011776C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A1070F21B9822280011776C /* Contacts+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Contacts+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		1A1070F31B9822280011776C /* Contacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contacts.swift; sourceTree = "<group>"; };
+		1A1070F61B9826780011776C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A1070F71B9826780011776C /* CoreData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +86,9 @@
 		1A1070B11B981B2E0011776C = {
 			isa = PBXGroup;
 			children = (
+				1A1070F61B9826780011776C /* CoreData.framework */,
+				1A1070F21B9822280011776C /* Contacts+CoreDataProperties.swift */,
+				1A1070F31B9822280011776C /* Contacts.swift */,
 				1A1070BC1B981B2E0011776C /* CoreDataXcode7 */,
 				1A1070D41B981B2F0011776C /* CoreDataXcode7Tests */,
 				1A1070DF1B981B2F0011776C /* CoreDataXcode7UITests */,
@@ -260,7 +270,9 @@
 			files = (
 				1A1070C61B981B2E0011776C /* CoreDataXcode7.xcdatamodeld in Sources */,
 				1A1070C01B981B2E0011776C /* ViewController.swift in Sources */,
+				1A1070F41B9822280011776C /* Contacts+CoreDataProperties.swift in Sources */,
 				1A1070BE1B981B2E0011776C /* AppDelegate.swift in Sources */,
+				1A1070F51B9822280011776C /* Contacts.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
