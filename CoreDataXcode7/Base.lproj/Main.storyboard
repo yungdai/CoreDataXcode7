@@ -89,7 +89,7 @@
                                         <rect key="frame" x="0.0" y="187" width="540" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WAo-lT-ZIq">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="WAo-lT-ZIq">
                                                 <rect key="frame" x="0.0" y="28" width="540" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WAo-lT-ZIq" id="lyB-Ex-cUX">
@@ -97,27 +97,11 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                             </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="bSr-Wa-w80">
-                                                <rect key="frame" x="0.0" y="72" width="540" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bSr-Wa-w80" id="Chv-eF-AwL">
-                                                    <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="SiW-hw-gwf">
-                                                <rect key="frame" x="0.0" y="116" width="540" height="44"/>
-                                                <autoresizingMask key="autoresizingMask"/>
-                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SiW-hw-gwf" id="Sb2-0I-4er">
-                                                    <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                </tableViewCellContentView>
-                                            </tableViewCell>
                                         </prototypes>
                                         <sections/>
                                         <connections>
-                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="y7s-XB-YP9"/>
-                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Smp-Cp-d9R"/>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="bOQ-gu-II1"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="u8H-yw-uNH"/>
                                         </connections>
                                     </tableView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Xi9-AS-cuB">
@@ -177,11 +161,13 @@
                         <outlet property="phone" destination="b4s-ZR-Uiz" id="FOy-jz-9Dg"/>
                         <outlet property="saveButton" destination="Yqr-Hb-JIy" id="OUv-be-e0o"/>
                         <outlet property="status" destination="KfN-EK-926" id="53H-vv-OPN"/>
+                        <outlet property="tableView" destination="2pc-Ax-b6C" id="mVR-f0-P66"/>
+                        <outlet property="view" destination="2pc-Ax-b6C" id="2yk-wV-0Ba"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="908" y="599"/>
+            <point key="canvasLocation" x="454" y="423"/>
         </scene>
     </scenes>
 </document>

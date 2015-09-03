@@ -10,7 +10,10 @@ import UIKit
 import CoreData
 
 
-class ViewController: UIViewController, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var resultsText: [String] = []
     
     // set up the managedObjectContext to be reused for any Entity
     let managedObjectContext = (UIApplication.sharedApplication().delegate as! AppDelegate).managedObjectContext
@@ -22,8 +25,12 @@ class ViewController: UIViewController, UITableViewDataSource {
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var findButton: UIButton!
 
+    // set up object to retrieve the requests to
+    var requestedObjects: AnyObject!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
     }
 
@@ -37,7 +44,6 @@ class ViewController: UIViewController, UITableViewDataSource {
         // setup the "scratch pad"
         let contact = Contacts(entity: entityDescription!, insertIntoManagedObjectContext: managedObjectContext)
         
-
         // set the object values of the Contact class object
         contact.name = name.text
         contact.address = address.text
@@ -75,10 +81,10 @@ class ViewController: UIViewController, UITableViewDataSource {
         // try querying the database for the name object
         do {
             // get all objects from the database based on the request
-            let objects = try managedObjectContext.executeFetchRequest(request)
-            
+            requestedObjects = try managedObjectContext.executeFetchRequest(request)
+        
             // go through each result
-            if let results: AnyObject =  objects {
+            if let results: AnyObject =  requestedObjects {
                 if results.count > 0 {
                     let match = results[0] as! NSManagedObject
                     name.text = match.valueForKey("name") as? String
@@ -103,8 +109,27 @@ class ViewController: UIViewController, UITableViewDataSource {
     }
     
     // MARK: TableViewData
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+    
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return 1
     }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        var rows = 0
+        if let tableItems = requestedObj
+        ects.count {
+            rows = tableItems
+        }
+        
+        return rows
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
+            cell.textLabel?.text = requestedObjects[indexPath.row].name as String?
+        
+        return cell
+    }
+
 }
 
