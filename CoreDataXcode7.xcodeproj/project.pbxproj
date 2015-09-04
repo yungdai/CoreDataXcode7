@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1A1068661B98E5D3003281A7 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1068651B98E5D3003281A7 /* TableViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		1A1070BE1B981B2E0011776C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070BD1B981B2E0011776C /* AppDelegate.swift */; };
 		1A1070C01B981B2E0011776C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070BF1B981B2E0011776C /* ViewController.swift */; };
 		1A1070C31B981B2E0011776C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1070C11B981B2E0011776C /* Main.storyboard */; };
@@ -38,7 +37,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1A1068651B98E5D3003281A7 /* TableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		1A1070BA1B981B2E0011776C /* CoreDataXcode7.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CoreDataXcode7.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A1070BD1B981B2E0011776C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1A1070BF1B981B2E0011776C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +80,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1A0CEAEC1B991BC60001C44B /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				1A1070BF1B981B2E0011776C /* ViewController.swift */,
+				1A1070BD1B981B2E0011776C /* AppDelegate.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		1A1068671B98EAA2003281A7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,14 +122,12 @@
 			isa = PBXGroup;
 			children = (
 				1A1068671B98EAA2003281A7 /* Models */,
-				1A1070BD1B981B2E0011776C /* AppDelegate.swift */,
-				1A1070BF1B981B2E0011776C /* ViewController.swift */,
+				1A0CEAEC1B991BC60001C44B /* ViewControllers */,
 				1A1070C11B981B2E0011776C /* Main.storyboard */,
 				1A1070C71B981B2E0011776C /* Assets.xcassets */,
 				1A1070C91B981B2E0011776C /* LaunchScreen.storyboard */,
 				1A1070CC1B981B2E0011776C /* Info.plist */,
 				1A1070C41B981B2E0011776C /* CoreDataXcode7.xcdatamodeld */,
-				1A1068651B98E5D3003281A7 /* TableViewController.swift */,
 			);
 			path = CoreDataXcode7;
 			sourceTree = "<group>";
@@ -276,7 +281,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A1070C61B981B2E0011776C /* CoreDataXcode7.xcdatamodeld in Sources */,
-				1A1068661B98E5D3003281A7 /* TableViewController.swift in Sources */,
 				1A1070C01B981B2E0011776C /* ViewController.swift in Sources */,
 				1A1070F41B9822280011776C /* Contacts+CoreDataProperties.swift in Sources */,
 				1A1070BE1B981B2E0011776C /* AppDelegate.swift in Sources */,
