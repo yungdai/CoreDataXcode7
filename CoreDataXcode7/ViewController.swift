@@ -126,5 +126,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = requestedObjects[indexPath.row].name as String!
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        name.text = requestedObjects[indexPath.row].name as String?
+        address.text = requestedObjects[indexPath.row].address as String?
+        phone.text = requestedObjects[indexPath.row].phone as String?
+    }
+    
+    // if you press the return button the keyboard will dissappear
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        resign()
+        return true
+    }
+    // resigning all first responders
+    func resign() {
+        name.resignFirstResponder()
+        phone.resignFirstResponder()
+        address.resignFirstResponder()
+    }
+    
+    
+    override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
+        resign()
+        
+    }
+    
+
 }
 
