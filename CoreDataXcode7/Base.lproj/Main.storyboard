@@ -89,13 +89,61 @@
                                         <rect key="frame" x="0.0" y="187" width="540" height="240"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="XIz-L7-qln">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="XIz-L7-qln" customClass="ContactTableViewCell" customModule="CoreDataXcode7" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="540" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XIz-L7-qln" id="Xtc-n4-oU1">
                                                     <rect key="frame" x="0.0" y="0.0" width="540" height="43"/>
                                                     <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ey-iQ-JZI">
+                                                            <rect key="frame" x="0.0" y="-1" width="540" height="45"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="VWK-rV-oNo">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="108" height="45"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="TnR-vZ-Swu">
+                                                                    <rect key="frame" x="108" y="0.0" width="270" height="45"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zz8-gC-Pb2">
+                                                                    <rect key="frame" x="378" y="0.0" width="162" height="45"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                            <constraints>
+                                                                <constraint firstItem="VWK-rV-oNo" firstAttribute="width" secondItem="9ey-iQ-JZI" secondAttribute="width" multiplier="0.2" id="b1F-Xb-CFF"/>
+                                                                <constraint firstItem="Zz8-gC-Pb2" firstAttribute="width" secondItem="9ey-iQ-JZI" secondAttribute="width" multiplier="0.3" id="dRC-fH-9L5"/>
+                                                            </constraints>
+                                                        </stackView>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="9ey-iQ-JZI" firstAttribute="centerY" secondItem="Xtc-n4-oU1" secondAttribute="centerY" id="6FR-IO-Q5k"/>
+                                                        <constraint firstItem="9ey-iQ-JZI" firstAttribute="centerX" secondItem="Xtc-n4-oU1" secondAttribute="centerX" id="mxc-xC-nk3"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <constraints>
+                                                    <constraint firstItem="9ey-iQ-JZI" firstAttribute="height" secondItem="XIz-L7-qln" secondAttribute="height" id="4Y7-k7-EEO"/>
+                                                    <constraint firstItem="9ey-iQ-JZI" firstAttribute="width" secondItem="XIz-L7-qln" secondAttribute="width" id="8Ex-Pv-9XV"/>
+                                                    <constraint firstItem="TnR-vZ-Swu" firstAttribute="width" secondItem="XIz-L7-qln" secondAttribute="width" multiplier="0.5" id="mrz-SV-7sg"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="8Ex-Pv-9XV"/>
+                                                    </mask>
+                                                </variation>
+                                                <connections>
+                                                    <outlet property="addressLabelText" destination="TnR-vZ-Swu" id="MaN-05-CuU"/>
+                                                    <outlet property="nameLabelText" destination="VWK-rV-oNo" id="oOE-RR-vCd"/>
+                                                    <outlet property="phoneNumberLabelText" destination="Zz8-gC-Pb2" id="l8W-33-eFX"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <sections/>

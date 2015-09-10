@@ -123,7 +123,22 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
-        cell.textLabel?.text = requestedObjects[indexPath.row].name as String!
+
+        if let contact = cell as? ContactTableViewCell {
+            
+            if let name = requestedObjects[indexPath.row].name as String? {
+                contact.nameLabelText.text = name
+            }
+            
+            if let address = requestedObjects[indexPath.row].address as String? {
+                contact.addressLabelText.text = address
+            }
+            
+            if let phoneNumber = requestedObjects[indexPath.row].phone as String? {
+                contact.phoneNumberLabelText.text = phoneNumber
+            }
+        }
+        
         return cell
     }
     
