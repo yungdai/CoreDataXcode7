@@ -30,8 +30,19 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //Looks for single or multiple taps.
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+        view.addGestureRecognizer(tap)
+
+        
         tableView.registerClass(UITableViewCell.self, forCellReuseIdentifier: "Cell")
         
+    }
+    
+    //Calls this function when the tap is recognized.
+    func DismissKeyboard(){
+        //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        view.endEditing(true)
     }
 
     // saving data to the persistent dataStore
@@ -99,7 +110,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         } catch let fetchError as NSError {
             status.text = "Could not get contact: \(pred), \(fetchError)"
         }
-        
+        // reload the data on the tableview
         tableView.reloadData()
     }
     
@@ -122,7 +133,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("Cell") as UITableViewCell!
+        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("ContactsCell") as UITableViewCell!
 
         if let contact = cell as? ContactTableViewCell {
             
@@ -153,14 +164,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         resign()
         return true
     }
+    
     // resigning all first responders
     func resign() {
         name.resignFirstResponder()
         phone.resignFirstResponder()
         address.resignFirstResponder()
     }
-    
-    
+        
     override func touchesCancelled(touches: Set<UITouch>?, withEvent event: UIEvent?) {
         resign()
         

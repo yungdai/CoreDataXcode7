@@ -15,10 +15,10 @@
 		1A1070CB1B981B2E0011776C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A1070C91B981B2E0011776C /* LaunchScreen.storyboard */; };
 		1A1070D61B981B2F0011776C /* CoreDataXcode7Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070D51B981B2F0011776C /* CoreDataXcode7Tests.swift */; };
 		1A1070E11B981B2F0011776C /* CoreDataXcode7UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070E01B981B2F0011776C /* CoreDataXcode7UITests.swift */; };
-		1A1070F41B9822280011776C /* Contacts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070F21B9822280011776C /* Contacts+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		1A1070F51B9822280011776C /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070F31B9822280011776C /* Contacts.swift */; settings = {ASSET_TAGS = (); }; };
-		1A4A63011BA0F50500680C5B /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A63001BA0F50500680C5B /* ContactTableViewCell.swift */; settings = {ASSET_TAGS = (); }; };
-		1A4A63031BA1085100680C5B /* ContactStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A63021BA1085100680C5B /* ContactStackView.swift */; settings = {ASSET_TAGS = (); }; };
+		1A1070F41B9822280011776C /* Contacts+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070F21B9822280011776C /* Contacts+CoreDataProperties.swift */; };
+		1A1070F51B9822280011776C /* Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A1070F31B9822280011776C /* Contacts.swift */; };
+		1A4A63011BA0F50500680C5B /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A63001BA0F50500680C5B /* ContactTableViewCell.swift */; };
+		1A4A63031BA1085100680C5B /* ContactStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4A63021BA1085100680C5B /* ContactStackView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -218,6 +218,7 @@
 		1A1070B21B981B2E0011776C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0710;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Yung Dai";
 				TargetAttributes = {
